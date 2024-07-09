@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edward Hsing's Personal Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Google Sans', sans-serif;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      margin: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background-color: rgba(10, 25, 47, 0.85);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+    header a {
+      color: #64ffda;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    .hero {
+      background: url('/mnt/data/image.png') no-repeat center center;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 60px 40px;
+      position: relative;
+      text-align: left;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 25, 47, 0.85);
+      z-index: -1;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 700;
+      color: #64ffda;
+    }
+    .hero h2 {
+      font-size: 4rem;
+      margin: 10px 0;
+      font-weight: 700;
+    }
+    .hero p {
+      max-width: 540px;
+      margin: 20px 0 0;
+      font-size: 1.25rem;
+      color: #8892b0;
+    }
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #64ffda;
+      text-decoration: none;
+      margin: 20px 0;
+    }
+    .contact-links a:hover {
+      color: #ffffff;
+    }
+    .section {
+      padding: 60px 40px;
+      margin-top: 20px;
+    }
+    .content-box {
+      background-color: #112240;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    .section p {
+      max-width: 800px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    footer {
+      background-color: rgba(10, 25, 47, 0.85);
+      padding: 40px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    footer a {
+      color: #64ffda;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    footer p {
+      margin: 20px 0 0;
+    }
+    .profile-img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <a href="#about">01. About</a>
+      <a href="#projects">02. Projects</a>
+      <a href="#contact">03. Contact</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Hi There, 👋</h1>
+    <h2>I'm Edward Hsing.</h2>
+    <p>I build innovative and practical open-source projects. Currently, I'm focused on promoting internet freedom and collaborating with a global community of developers.</p>
+  </section>
+
+  <section id="about" class="section about-section" data-aos="fade-up">
+    <img src="https://avatars.githubusercontent.com/u/39870096?v=4" alt="Edward Hsing" class="profile-img">
+    <div class="content-box">
+      <h2>About Me</h2>
+      <p>Hey there! I'm Edward, the Founder and President of the nonprofit organization <a href="https://digitalplat.org" class="text-blue-500 hover:underline">DigitalPlat</a>. I'm also a high school student at Nazareth School of National University Manila.</p>
+      <p>I'm passionate about creating both innovative and practical open-source projects. Additionally, I actively work on nonprofit initiatives to promote internet freedom. As a proud member of <span class="highlight">Hack Club</span>, I enjoy collaborating with a global community of young hackers. I'm a big supporter of <span class="highlight">internet freedom</span>, <span class="highlight">democracy</span>, and <span class="highlight">human rights</span>, and I have a deep love for <span class="highlight">American culture</span>.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section" data-aos="fade-up">
+    <div class="content-box">
+      <h2>Projects</h2>
+      <b>Projects created by me and actively maintained:</b>
+      <ul>
+        <li><b>FlyOS Project:</b> Deploy a full Ubuntu-based Linux subsystem on your phone. It's a complete Linux system that fits in your pocket! Running Linux, Windows, and DOS applications with a web dashboard on your phone.</li>
+        <li><b>US.KG:</b> Free domain name, more than 20,000 users benefit from it!</li>
+        <li><b>BINPython:</b> Portable single binary Python. Runs anywhere</li>
+        <li><b>...</b> Find more projects on my GitHub</li>
+      </ul>
+      <p>Check out my latest projects on <a href="https://github.com/edwardlab" class="text-blue-500 hover:underline">GitHub</a>. I'm constantly working on new and exciting projects that aim to make a difference in the world.</p>
+      <b>DigitalPlat</b>
+      <p>I created the organization DigitalPlat.ORG, located in California, USA. (A global non-profit organization that supports open source and community development and explores innovative projects) Our members come from all over the world, and we welcome you to join our family!</p>
+      <p>DigitalPlat is fiscally sponsored by The Hack Foundation, a 501(c)(3) nonprofit (EIN: 81-2908499).</p>
+        <p>Donate to DigitalPlat today (Tax-exempt in the U.S. Non-profit charitable organization): <a href="https://hcb.hackclub.com/donations/start/digitalplat" style="text-decoration: underline;">Click Here!</a></p>
+        <p>Contact DigitalPlat: <a href="mailto:contact@digitalplat.org" style="text-decoration: underline;">contact@digitalplat.org</a>, +1-855-980-5959 (Toll-free in US & Canada)</p>
+        <p>DigitalPlat GitHub: <a href="https://github.com/digitalplatdev" style="text-decoration: underline;">https://github.com/digitalplatdev</a></p>
+    </div>
+  </section>
+
+  <section id="contact" class="section" data-aos="fade-up">
+    <div class="content-box">
+      <h2>Contact Me</h2>
+      <b>It’s really cool to talk to me! Isn't it?</b>
+      <p>As long as I am available, you can contact me through any means of communication!</p>
+      <p>If you prefer, we can also schedule a online meeting!</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="contact-links">
+      <a href="https://github.com/edwardlab" aria-label="GitHub">
+        <span class="material-icons" style="font-size: 36px;">code</span> GitHub
+      </a>
+      <a href="https://x.com/edwardhsinglab" aria-label="X">
+        <span class="material-icons" style="font-size: 36px;">alternate_email</span> X
+      </a>
+      <a href="https://discord.gg/2zYUCAnx" aria-label="Discord">
+        <span class="material-icons" style="font-size: 36px;">forum</span> Discord
+      </a>
+      <a href="https://t.me/edward_hsing" aria-label="Telegram">
+        <span class="material-icons" style="font-size: 36px;">send</span> Telegram
+      </a>
+      <a href="https://www.facebook.com/xingyujie50" aria-label="Facebook">
+        <span class="material-icons" style="font-size: 36px;">facebook</span> Facebook
+      </a>
+    </div>
+    <p>&copy; 2024 Edward Hsing. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>
