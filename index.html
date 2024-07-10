@@ -8,7 +8,7 @@
   <meta name="keywords" content="Edward Hsing, open source, DigitalPlat, internet freedom, projects, developer, nonprofit">
   <meta name="author" content="Edward Hsing">
   <link rel="icon" href="https://avatars.githubusercontent.com/u/39870096?v=4" type="image/x-icon">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
       background-color: #0a192f;
       color: #ccd6f6;
       margin: 0;
+      overflow-x: hidden;
     }
     header {
       display: flex;
@@ -29,14 +30,19 @@
       top: 0;
       z-index: 10;
       backdrop-filter: blur(10px);
+      transition: background-color 0.3s, padding 0.3s;
     }
     header a {
       color: #64ffda;
       text-decoration: none;
       margin: 0 15px;
+      transition: color 0.3s;
+    }
+    header a:hover {
+      color: #ffffff;
     }
     .hero {
-      background: url('/mnt/data/image.png') no-repeat center center;
+      background: url('/mnt/data/Screenshot%202024-07-10%20163657.png') no-repeat center center;
       background-size: cover;
       color: white;
       height: 100vh;
@@ -63,17 +69,29 @@
       margin: 0;
       font-weight: 700;
       color: #64ffda;
+      transition: transform 0.3s;
+    }
+    .hero h1:hover {
+      transform: scale(1.05);
     }
     .hero h2 {
       font-size: 4rem;
       margin: 10px 0;
       font-weight: 700;
+      transition: transform 0.3s;
+    }
+    .hero h2:hover {
+      transform: scale(1.05);
     }
     .hero p {
       max-width: 540px;
       margin: 20px 0 0;
       font-size: 1.25rem;
       color: #8892b0;
+      transition: color 0.3s;
+    }
+    .hero p:hover {
+      color: #ffffff;
     }
     .contact-links a {
       display: inline-flex;
@@ -82,9 +100,11 @@
       color: #64ffda;
       text-decoration: none;
       margin: 20px 0;
+      transition: color 0.3s, transform 0.3s;
     }
     .contact-links a:hover {
       color: #ffffff;
+      transform: translateY(-3px);
     }
     .section {
       padding: 60px 40px;
@@ -94,6 +114,12 @@
       background-color: #112240;
       border-radius: 10px;
       padding: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .content-box:hover {
+      transform: scale(1.02);
     }
     .section h2 {
       font-size: 2.5rem;
@@ -120,6 +146,10 @@
       color: #64ffda;
       text-decoration: none;
       margin: 0 15px;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #ffffff;
     }
     footer p {
       margin: 20px 0 0;
@@ -130,6 +160,11 @@
       height: 150px;
       margin: 0 auto 20px;
       display: block;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .profile-img:hover {
+      transform: scale(1.05);
     }
     .about-section {
       display: flex;
@@ -137,9 +172,45 @@
       align-items: center;
       text-align: center;
     }
+    .material-icons {
+      font-size: 36px;
+    }
+    .text-blue-500:hover {
+      text-decoration: underline;
+    }
+    /* Loading Screen Styles */
+    #loading-screen {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #0a192f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      opacity: 1;
+      visibility: visible;
+    }
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #64ffda;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
+
+  <div id="loading-screen">
+    <div class="loader"></div>
+  </div>
 
   <header>
     <div>
@@ -149,74 +220,97 @@
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Hi There, 👋</h1>
-    <h2>I'm Edward Hsing.</h2>
-    <p>I build innovative and practical open-source projects. Currently, I'm focused on promoting internet freedom and collaborating with a global community of developers.</p>
-  </section>
+  <main>
+    <section class="hero" id="hero-section" data-aos="fade-up">
+      <h1>Hi There, 👋</h1>
+      <h2>I'm Edward Hsing.</h2>
+      <p>I build innovative and practical open-source projects. Currently, I'm focused on promoting internet freedom and collaborating with a global community of developers.</p>
+    </section>
 
-  <section id="about" class="section about-section" data-aos="fade-up">
-    <img src="https://avatars.githubusercontent.com/u/39870096?v=4" alt="Edward Hsing" class="profile-img">
-    <div class="content-box">
-      <h2>About Me</h2>
-      <p>Hey there! I'm Edward, the Founder and President of the nonprofit organization <a href="https://digitalplat.org" class="text-blue-500 hover:underline">DigitalPlat</a>. I'm also a high school student at Nazareth School of National University Manila.</p>
-      <p>I'm passionate about creating both innovative and practical open-source projects. Additionally, I actively work on nonprofit initiatives to promote internet freedom. As a proud member of <span class="highlight">Hack Club</span>, I enjoy collaborating with a global community of young hackers. I'm a big supporter of <span class="highlight">internet freedom</span>, <span class="highlight">democracy</span>, and <span class="highlight">human rights</span>, and I have a deep love for <span class="highlight">American culture</span>.</p>
-    </div>
-  </section>
+    <section id="about" class="section about-section" data-aos="fade-up">
+      <img src="https://avatars.githubusercontent.com/u/39870096?v=4" alt="Edward Hsing" class="profile-img">
+      <div class="content-box">
+        <h2>About Me</h2>
+        <p>Hey there! I'm Edward, the Founder and President of the nonprofit organization <a href="https://digitalplat.org" class="text-blue-500">DigitalPlat</a>. I'm also a high school student at Nazareth School of National University Manila.</p>
+        <p>I'm passionate about creating both innovative and practical open-source projects. Additionally, I actively work on nonprofit initiatives to promote internet freedom. As a proud member of <span class="highlight">Hack Club</span>, I enjoy collaborating with a global community of young hackers. I'm a big supporter of <span class="highlight">internet freedom</span>, <span class="highlight">democracy</span>, and <span class="highlight">human rights</span>, and I have a deep love for <span class="highlight">American culture</span>.</p>
+      </div>
+    </section>
 
-  <section id="projects" class="section" data-aos="fade-up">
-    <div class="content-box">
-      <h2>Projects</h2>
-      <b>Projects created by me and actively maintained:</b>
-      <ul>
-        <li><b>FlyOS Project:</b> Deploy a full Ubuntu-based Linux subsystem on your phone. It's a complete Linux system that fits in your pocket! Running Linux, Windows, and DOS applications with a web dashboard on your phone.</li>
-        <li><b>US.KG:</b> Free domain name, more than 20,000 users benefit from it!</li>
-        <li><b>BINPython:</b> Portable single binary Python. Runs anywhere</li>
-        <li><b>...</b> Find more projects on my GitHub</li>
-      </ul>
-      <p>Check out my latest projects on <a href="https://github.com/edwardlab" class="text-blue-500 hover:underline">GitHub</a>. I'm constantly working on new and exciting projects that aim to make a difference in the world.</p>
-      <b>DigitalPlat</b>
-      <p>I created the organization DigitalPlat.ORG, located in California, USA. (A global non-profit organization that supports open source and community development and explores innovative projects) Our members come from all over the world, and we welcome you to join our family!</p>
-      <p>DigitalPlat is fiscally sponsored by The Hack Foundation, a 501(c)(3) nonprofit (EIN: 81-2908499).</p>
-        <p>Donate to DigitalPlat today (Tax-exempt in the U.S. Non-profit charitable organization): <a href="https://hcb.hackclub.com/donations/start/digitalplat" style="text-decoration: underline;">Click Here!</a></p>
-        <p>Contact DigitalPlat: <a href="mailto:contact@digitalplat.org" style="text-decoration: underline;">contact@digitalplat.org</a>, +1-855-980-5959 (Toll-free in US & Canada)</p>
-        <p>DigitalPlat GitHub: <a href="https://github.com/digitalplatdev" style="text-decoration: underline;">https://github.com/digitalplatdev</a></p>
-    </div>
-  </section>
+    <section id="projects" class="section" data-aos="fade-up">
+      <div class="content-box">
+        <h2>Projects</h2>
+        <b>Projects created by me and actively maintained:</b>
+        <ul>
+          <li><b>FlyOS Project:</b> Deploy a full Ubuntu-based Linux subsystem on your phone. It's a complete Linux system that fits in your pocket! Running Linux, Windows, and DOS applications with a web dashboard on your phone.</li>
+          <li><b>US.KG:</b> Free domain name, more than 20,000 users benefit from it!</li>
+          <li><b>BINPython:</b> Portable single binary Python. Runs anywhere</li>
+          <li><b>...</b> Find more projects on my GitHub</li>
+        </ul>
+        <p>Check out my latest projects on <a href="https://github.com/edwardlab" class="text-blue-500">GitHub</a>. I'm constantly working on new and exciting projects that aim to make a difference in the world.</p>
+        <b>DigitalPlat</b>
+        <p>I created the organization DigitalPlat.ORG, located in California, USA. (A global non-profit organization that supports open source and community development and explores innovative projects) Our members come from all over the world, and we welcome you to join our family!</p>
+        <p>DigitalPlat is fiscally sponsored by The Hack Foundation, a 501(c)(3) nonprofit (EIN: 81-2908499).</p>
+        <p>Donate to DigitalPlat today (Tax-exempt in the U.S. Non-profit charitable organization): <a href="https://hcb.hackclub.com/donations/start/digitalplat" class="text-blue-500">Click Here!</a></p>
+        <p>Contact DigitalPlat: <a href="mailto:contact@digitalplat.org" class="text-blue-500">contact@digitalplat.org</a>, +1-855-980-5959 (Toll-free in US & Canada)</p>
+        <p>DigitalPlat GitHub: <a href="https://github.com/digitalplatdev" class="text-blue-500">https://github.com/digitalplatdev</a></p>
+      </div>
+    </section>
 
-  <section id="contact" class="section" data-aos="fade-up">
-    <div class="content-box">
-      <h2>Contact Me</h2>
-      <b>It’s really cool to talk to me! Isn't it?</b>
-      <p>Feel free to contact me using any method, as long as I'm available!</p>
-      <p>If you prefer, we can also schedule an online meeting!</p>
-    </div>
-  </section>
+    <section id="contact" class="section" data-aos="fade-up">
+      <div class="content-box">
+        <h2>Contact Me</h2>
+        <b>It’s really cool to talk to me! Isn't it?</b>
+        <p>Feel free to contact me using any method, as long as I'm available!</p>
+        <p>If you prefer, we can also schedule an online meeting!</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="contact-links">
       <a href="https://github.com/edwardlab" aria-label="GitHub">
-        <span class="material-icons" style="font-size: 36px;">code</span> GitHub
+        <span class="material-icons">code</span> GitHub
       </a>
       <a href="https://x.com/edwardhsinglab" aria-label="X">
-        <span class="material-icons" style="font-size: 36px;">alternate_email</span> X
+        <span class="material-icons">alternate_email</span> X
       </a>
       <a href="https://discord.gg/2zYUCAnx" aria-label="Discord">
-        <span class="material-icons" style="font-size: 36px;">forum</span> Discord
+        <span class="material-icons">forum</span> Discord
       </a>
       <a href="https://t.me/edward_hsing" aria-label="Telegram">
-        <span class="material-icons" style="font-size: 36px;">send</span> Telegram
+        <span class="material-icons">send</span> Telegram
       </a>
       <a href="https://www.facebook.com/xingyujie50" aria-label="Facebook">
-        <span class="material-icons" style="font-size: 36px;">facebook</span> Facebook
+        <span class="material-icons">facebook</span> Facebook
       </a>
     </div>
     <p>&copy; 2024 Edward Hsing. All Rights Reserved.</p>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
   <script>
-    AOS.init();
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init();
+      const loadingScreen = document.getElementById('loading-screen');
+      window.addEventListener('load', () => {
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.visibility = 'hidden';
+        }, 500);
+      });
+
+      // Header transition on scroll
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.style.backgroundColor = 'rgba(10, 25, 47, 0.95)';
+          header.style.padding = '10px 40px';
+        } else {
+          header.style.backgroundColor = 'rgba(10, 25, 47, 0.85)';
+          header.style.padding = '20px 40px';
+        }
+      });
+    });
   </script>
 
 </body>
