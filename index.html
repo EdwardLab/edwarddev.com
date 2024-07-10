@@ -9,9 +9,10 @@
   <meta name="author" content="Edward Hsing">
   <link rel="icon" href="https://avatars.githubusercontent.com/u/39870096?v=4" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0"></script>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       font-family: 'Google Sans', sans-serif;
@@ -138,42 +139,58 @@
     }
     footer {
       background-color: rgba(10, 25, 47, 0.85);
-      padding: 40px;
+      padding: 40px 0;
       text-align: center;
       backdrop-filter: blur(10px);
+      color: #ccd6f6;
+      position: relative;
     }
-    footer a {
-      color: #64ffda;
-      text-decoration: none;
-      margin: 0 15px;
-      transition: color 0.3s;
-    }
-    footer a:hover {
-      color: #ffffff;
-    }
-    footer p {
-      margin: 20px 0 0;
-    }
-    .profile-img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      margin: 0 auto 20px;
-      display: block;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s;
-    }
-    .profile-img:hover {
-      transform: scale(1.05);
-    }
-    .about-section {
+    .footer-content {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      gap: 20px;
     }
-    .material-icons {
-      font-size: 36px;
+    .footer-links {
+      display: flex;
+      gap: 30px;
+    }
+    .footer-links a {
+      color: #64ffda;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .footer-socials a {
+      color: #64ffda;
+      font-size: 24px;
+      transition: color 0.3s;
+    }
+    .footer-socials a:hover {
+      color: #ffffff;
+    }
+    .footer-bottom {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #8892b0;
+    }
+    .svg-icon {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      transition: fill 0.3s;
+    }
+    .svg-icon:hover {
+      fill: #ffffff;
     }
     .text-blue-500:hover {
       text-decoration: underline;
@@ -204,6 +221,31 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    /* Particles.js container */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .profile-img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      display: block;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -219,6 +261,8 @@
       <a href="#contact">03. Contact</a>
     </div>
   </header>
+
+  <div id="particles-js"></div>
 
   <main>
     <section class="hero" id="hero-section" data-aos="fade-up">
@@ -267,24 +311,34 @@
   </main>
 
   <footer>
-    <div class="contact-links">
-      <a href="https://github.com/edwardlab" aria-label="GitHub">
-        <span class="material-icons">code</span> GitHub
-      </a>
-      <a href="https://x.com/edwardhsinglab" aria-label="X">
-        <span class="material-icons">alternate_email</span> X
-      </a>
-      <a href="https://discord.gg/2zYUCAnx" aria-label="Discord">
-        <span class="material-icons">forum</span> Discord
-      </a>
-      <a href="https://t.me/edward_hsing" aria-label="Telegram">
-        <span class="material-icons">send</span> Telegram
-      </a>
-      <a href="https://www.facebook.com/xingyujie50" aria-label="Facebook">
-        <span class="material-icons">facebook</span> Facebook
-      </a>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/edwardlab">GitHub</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/edwardlab" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://x.com/edwardhsinglab" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://discord.gg/2zYUCAnx" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://t.me/edward_hsing" aria-label="Telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://www.facebook.com/xingyujie50" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2024 Edward Hsing. All Rights Reserved.
+      </div>
     </div>
-    <p>&copy; 2024 Edward Hsing. All Rights Reserved.</p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
@@ -309,6 +363,113 @@
           header.style.backgroundColor = 'rgba(10, 25, 47, 0.85)';
           header.style.padding = '20px 40px';
         }
+      });
+
+      // Particles.js configuration
+      particlesJS('particles-js', {
+        particles: {
+          number: {
+            value: 80,
+            density: {
+              enable: true,
+              value_area: 800
+            }
+          },
+          color: {
+            value: "#64ffda"
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000"
+            },
+            polygon: {
+              nb_sides: 5
+            }
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false
+            }
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
+              sync: false
+            }
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#64ffda",
+            opacity: 0.4,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200
+            }
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse"
+            },
+            onclick: {
+              enable: true,
+              mode: "push"
+            },
+            resize: true
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 1
+              }
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4
+            },
+            push: {
+              particles_nb: 4
+            },
+            remove: {
+              particles_nb: 2
+            }
+          }
+        },
+        retina_detect: true
       });
     });
   </script>
