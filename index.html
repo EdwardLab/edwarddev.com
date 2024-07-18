@@ -16,16 +16,15 @@
   <style>
     body {
       font-family: 'Google Sans', sans-serif;
-      background-color: #0a192f;
-      color: #ccd6f6;
       margin: 0;
       overflow-x: hidden;
+      transition: background-color 0.3s, color 0.3s;
     }
     header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 20px 40px;
-      background-color: rgba(10, 25, 47, 0.85);
       position: fixed;
       width: 100%;
       top: 0;
@@ -34,18 +33,12 @@
       transition: background-color 0.3s, padding 0.3s;
     }
     header a {
-      color: #64ffda;
       text-decoration: none;
       margin: 0 15px;
       transition: color 0.3s;
     }
-    header a:hover {
-      color: #ffffff;
-    }
     .hero {
-      background: url('/mnt/data/Screenshot%202024-07-10%20163657.png') no-repeat center center;
       background-size: cover;
-      color: white;
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -54,6 +47,7 @@
       padding: 60px 40px;
       position: relative;
       text-align: left;
+      color: var(--primary-text);
     }
     .hero::before {
       content: '';
@@ -62,14 +56,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(10, 25, 47, 0.85);
+      background: var(--hero-overlay-color);
       z-index: -1;
     }
     .hero h1 {
       font-size: 3rem;
       margin: 0;
       font-weight: 700;
-      color: #64ffda;
       transition: transform 0.3s;
     }
     .hero h1:hover {
@@ -88,23 +81,21 @@
       max-width: 540px;
       margin: 20px 0 0;
       font-size: 1.25rem;
-      color: #8892b0;
       transition: color 0.3s;
+      color: var(--text-color);
     }
     .hero p:hover {
-      color: #ffffff;
+      color: var(--primary-text-hover);
     }
     .contact-links a {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: #64ffda;
       text-decoration: none;
       margin: 20px 0;
       transition: color 0.3s, transform 0.3s;
     }
     .contact-links a:hover {
-      color: #ffffff;
       transform: translateY(-3px);
     }
     .section {
@@ -112,12 +103,12 @@
       margin-top: 20px;
     }
     .content-box {
-      background-color: #112240;
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 40px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
+      background-color: var(--secondary-background-color);
     }
     .content-box:hover {
       transform: scale(1.02);
@@ -138,11 +129,9 @@
       margin-bottom: 20px;
     }
     footer {
-      background-color: rgba(10, 25, 47, 0.85);
       padding: 40px 0;
       text-align: center;
       backdrop-filter: blur(10px);
-      color: #ccd6f6;
       position: relative;
     }
     .footer-content {
@@ -151,19 +140,11 @@
       align-items: center;
       text-align: center;
       gap: 20px;
+      color: var(--primary-text);
     }
     .footer-links {
       display: flex;
       gap: 30px;
-    }
-    .footer-links a {
-      color: #64ffda;
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-    .footer-links a:hover {
-      color: #ffffff;
     }
     .footer-socials {
       display: flex;
@@ -171,12 +152,12 @@
       margin-top: 20px;
     }
     .footer-socials a {
-      color: #64ffda;
       font-size: 24px;
       transition: color 0.3s;
+      color: var(--primary-color);
     }
     .footer-socials a:hover {
-      color: #ffffff;
+      color: var(--primary-text-hover);
     }
     .footer-bottom {
       margin-top: 20px;
@@ -198,7 +179,7 @@
       margin-top: 9px;
     }
     .svg-icon:hover {
-      fill: #ffffff;
+      fill: var(--primary-text-hover);
     }
     .text-blue-500:hover {
       text-decoration: underline;
@@ -208,7 +189,6 @@
       position: fixed;
       width: 100%;
       height: 100%;
-      background-color: #0a192f;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -219,7 +199,7 @@
     }
     .loader {
       border: 8px solid #f3f3f3;
-      border-top: 8px solid #64ffda;
+      border-top: 8px solid var(--primary-color);
       border-radius: 50%;
       width: 60px;
       height: 60px;
@@ -254,6 +234,57 @@
       align-items: center;
       text-align: center;
     }
+    /* Light Mode */
+    :root {
+      --primary-color: #64ffda;
+      --primary-text: #0a192f;
+      --primary-text-hover: #ffffff;
+      --background-color: #ffffff;
+      --secondary-background-color: #f0f0f0;
+      --hero-overlay-color: rgba(255, 255, 255, 0.85);
+      --text-color: #0a192f;
+      --text-hover-color: #64ffda;
+      --header-bg-color: rgba(255, 255, 255, 0.85);
+      --header-text-color: #0a192f;
+    }
+    /* Dark Mode */
+    [data-theme='dark'] {
+      --primary-color: #64ffda;
+      --primary-text: #ccd6f6;
+      --primary-text-hover: #ffffff;
+      --background-color: #0a192f;
+      --secondary-background-color: #112240;
+      --hero-overlay-color: rgba(10, 25, 47, 0.85);
+      --text-color: #ccd6f6;
+      --text-hover-color: #ffffff;
+      --header-bg-color: rgba(10, 25, 47, 0.85);
+      --header-text-color: #64ffda;
+    }
+    body {
+      background-color: var(--background-color);
+      color: var(--primary-text);
+    }
+    header {
+      background-color: var(--header-bg-color);
+    }
+    header a {
+      color: var(--header-text-color);
+    }
+    header a:hover {
+      color: var(--primary-text-hover);
+    }
+    .contact-links a {
+      color: var(--primary-color);
+    }
+    .contact-links a:hover {
+      color: var(--primary-text-hover);
+    }
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+      color: var(--primary-color);
+    }
   </style>
 </head>
 <body>
@@ -267,6 +298,9 @@
       <a href="#about">01. About</a>
       <a href="#projects">02. Projects</a>
       <a href="#contact">03. Contact</a>
+    </div>
+    <div>
+      <i class="theme-toggle fas fa-sun" id="theme-toggle"></i>
     </div>
   </header>
 
@@ -364,16 +398,27 @@
         }, 500);
       });
 
-      // Header transition on scroll
-      const header = document.querySelector('header');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          header.style.backgroundColor = 'rgba(10, 25, 47, 0.95)';
-          header.style.padding = '10px 40px';
+      // Theme toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const storedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', storedTheme);
+      if (storedTheme === 'dark') {
+        themeToggle.classList.replace('fa-sun', 'fa-moon');
+      } else {
+        themeToggle.classList.replace('fa-moon', 'fa-sun');
+      }
+      themeToggle.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+          themeToggle.classList.replace('fa-sun', 'fa-moon');
         } else {
-          header.style.backgroundColor = 'rgba(10, 25, 47, 0.85)';
-          header.style.padding = '20px 40px';
+          document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+          themeToggle.classList.replace('fa-moon', 'fa-sun');
         }
+        document.querySelector('header').style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--header-bg-color');
       });
 
       // Particles.js configuration
@@ -484,6 +529,9 @@
       });
     });
   </script>
-
+<script>
+    // Set the initial theme to dark
+    document.documentElement.setAttribute('data-theme', 'dark');
+</script>
 </body>
 </html>
