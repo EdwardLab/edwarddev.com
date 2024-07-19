@@ -274,6 +274,12 @@
       transition: color 0.3s;
       color: var(--primary-color);
     }
+    .logo img {
+      max-height: 96px; /* Set this value to the height you want */
+    }
+    .logo-text img {
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
@@ -308,6 +314,8 @@
         <h2>About Me</h2>
         <p>Hey there! I'm Edward, the Founder and President of the nonprofit organization <a href="https://digitalplat.org" class="text-blue-500">DigitalPlat</a>. I'm also a student and developer, turning my ideas into reality.</p>
         <p>I'm passionate about creating both innovative and practical open-source projects. Additionally, I actively work on nonprofit initiatives to promote internet freedom. As a proud member of <span class="highlight">Hack Club</span>, I enjoy collaborating with a global community of young hackers. I strongly support <span class="highlight">internet freedom</span>, <span class="highlight">democracy</span>, and <span class="highlight">human rights</span>. I have a deep love for <span class="highlight">American culture</span> and am currently a high school student at Nazareth School of National University Manila.</p>
+        <p>💡 I am currently working in software development, the Internet of Things (IoT), cybersecurity (including network maintenance), Linux and embedded development, and edge computing.</p>
+        <p>🎓 I am currently studying operating system kernel development (OSDEV), AI and machine learning, and front-end development (React), among other things.</p>
       </div>      
     </section>
 
@@ -323,8 +331,8 @@
           <li><b>...</b> Find more projects on my GitHub</li>
         </ul>
         <p>Check out my latest projects on <a href="https://github.com/edwardlab" class="text-blue-500">GitHub</a>. I'm constantly working on new and exciting projects that aim to make a difference in the world.</p>
-        <b>DigitalPlat</b>
-        <p>I created the organization DigitalPlat.ORG (A global non-profit organization that supports open source and community development and explores innovative projects) Our members come from all over the world, and we welcome you to join our family!</p>
+        <b><span class="logo-text"><img src="https://cloud-y7bfnupya-hack-club-bot.vercel.app/0logo-banner-300x96.png" alt="DigitalPlat Logo" style="height: 2em;"></span></b>
+        <p>I created the organization DigitalPlat.org (A global non-profit organization that supports open source and community development and explores innovative projects) Our members come from all over the world, and we welcome you to join our family!</p>
         <p>DigitalPlat is fiscally sponsored by The Hack Foundation, a 501(c)(3) nonprofit (EIN: 81-2908499).</p>
         <p>Donate to DigitalPlat today (Tax-exempt in the U.S. Non-profit charitable organization): <a href="https://hcb.hackclub.com/donations/start/digitalplat" class="text-blue-500">Click Here!</a></p>
         <p>Contact DigitalPlat: <a href="mailto:contact@digitalplat.org" class="text-blue-500">contact@digitalplat.org</a>, +1-855-980-5959 (Toll-free in US & Canada)</p>
@@ -347,38 +355,43 @@
 
   <footer>
     <div class="footer-content">
-      <div class="footer-links">
+      <nav class="footer-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a href="https://github.com/edwardlab">GitHub</a>
-      </div>
+        <a href="https://github.com/edwardlab" target="_blank" aria-label="GitHub Profile">GitHub</a>
+      </nav>
       <div class="footer-socials">
-        <a href="https://github.com/edwardlab" aria-label="GitHub">
+        <a href="https://github.com/edwardlab" target="_blank" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://x.com/edwardhsinglab" aria-label="X" class="svg-icon">
+        <a href="https://x.com/edwardhsinglab" target="_blank" aria-label="Twitter (now X)" class="svg-icon">
           <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
             <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66"/>
           </svg>
         </a>
-        <a href="https://discord.gg/2zYUCAnx" aria-label="Discord">
+        <a href="https://discord.gg/2zYUCAnx" target="_blank" aria-label="Discord">
           <i class="fab fa-discord"></i>
         </a>
-        <a href="https://t.me/edward_hsing" aria-label="Telegram">
+        <a href="https://t.me/edward_hsing" target="_blank" aria-label="Telegram">
           <i class="fab fa-telegram"></i>
         </a>
-        <a href="https://www.facebook.com/xingyujie50" aria-label="Facebook">
+        <a href="https://www.facebook.com/xingyujie50" target="_blank" aria-label="Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </div>
       <div class="footer-bottom">
-        &copy; 2024 Edward Hsing. All Rights Reserved.<br>
-        <a href="/policy/privacy.html" class="text-blue-500">Privacy Policy</a>&nbsp;
-        <a href="/policy/cookie.html" class="text-blue-500">Cookie Policy</a>        
+        <p>&copy; 2024 Edward Hsing. All Rights Reserved.</p>
+        <p>Except where otherwise noted, Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.</p>
+        <p>This page is open source. (MIT License) <a href="https://github.com/EdwardLab/edwarddev.com/blob/main/index.html" target="_blank" class="text-blue-500">Improve this page ↗</a></p>
+        <nav>
+          <a href="/policy/privacy.html" class="text-blue-500">Privacy Policy</a>&nbsp;
+          <a href="/policy/cookie.html" class="text-blue-500">Cookie Policy</a>&nbsp;
+          <a href="https://github.com/EdwardLab/edwarddev.com/issues" class="text-blue-500">Feedback</a>
+        </nav>
       </div>
     </div>
-  </footer>
+  </footer>  
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
   <script>
