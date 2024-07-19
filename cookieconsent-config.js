@@ -67,7 +67,7 @@ CookieConsent.run({
                         },
                         {
                             title: "More Information",
-                            description: "For any inquiries about our cookie policy and your choices, please contact us."
+                            description: "For any inquiries about our cookie policy and your choices, please contact us. <a href=\"/policy/cookie.html\">Cookie Policy</a>."
                         }
                     ]
                 }
