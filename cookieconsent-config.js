@@ -32,14 +32,14 @@ CookieConsent.run({
             en: {
                 consentModal: {
                     title: "We value your privacy",
-                    description: "We use cookies to improve your experience on our website and analyze data. By continuing to browse, you consent to our use of cookies.",
+                    description: "We use cookies to improve your experience on our website and analyze traffic. By continuing to browse, you consent to our use of cookies.",
                     acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
                     showPreferencesBtn: "Manage preferences",
                     footer: "<a href=\"/policy/privacy.html\">Privacy Policy</a>\n<a href=\"policy/cookie.html\">Cookie Policy</a>"
                 },
                 preferencesModal: {
-                    title: "Consent Preferences Center",
+                    title: "Consent Preferences",
                     acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
                     savePreferencesBtn: "Save preferences",
