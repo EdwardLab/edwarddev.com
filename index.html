@@ -280,6 +280,13 @@
     .logo-text img {
       vertical-align: middle;
     }
+    /* Responsive iFrame */
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      height: 600px;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -313,7 +320,7 @@
       <div class="content-box" style="text-align: left; max-width: 800px; margin: 0 auto;">
         <h2>About Me</h2>
         <p>Hey there! I'm Edward, the Founder and President of the nonprofit organization <a href="https://digitalplat.org" class="text-blue-500">DigitalPlat</a>. I'm also a student and developer, turning my ideas into reality.</p>
-        <p>I'm passionate about creating both innovative and practical open-source projects. Additionally, I actively work on nonprofit initiatives to promote internet freedom. As a proud member of <span class="highlight">Hack Club</span>, I enjoy collaborating with a global community of young hackers. I strongly support <span class="highlight">internet freedom</span>, <span class="highlight">democracy</span>, and <span class="highlight">human rights</span>. I have a deep love for <span class="highlight">American culture</span> and am currently a high school student at Nazareth School of National University Manila.</p>
+        <p>I'm passionate about creating both innovative and practical open-source projects. Additionally, I actively work on nonprofit initiatives to promote internet freedom. As a proud member of <span class="highlight">Hack Club</span>, I enjoy collaborating with a global community of young hackers. I strongly support <span class="highlight">internet freedom</span>, <span class="highlight">democracy</span>, and <span class="highlight">human rights</span>. I have a deep love for <span class="highlight">American culture.</span></p>
         <p>💡 I am currently working in software development, the Internet of Things (IoT), cybersecurity (including network maintenance), Linux and embedded development, and edge computing.</p>
         <p>🎓 I am currently studying operating system kernel development (OSDEV), AI and machine learning, and front-end development (React), among other things.</p>
         <p>😃 In my free time, I enjoy walking around, swimming, biking. I love both bustling big cities and natural landscapes. When I'm bored, I like to watch YouTube and play games like Minecraft, Roblox, PUBG Mobile and so on. I also love listening to pop music on Spotify, American country music, Remix, and instrumental music.</p>
@@ -350,12 +357,31 @@
         <h2>Contact Me</h2>
         <p><b>"I'm always excited to connect with like-minded individuals and discuss new ideas."</b></p>
         <p>Feel free to contact me using any method, as long as I'm available!</p>
-        <p>Email: </p>
-        <a href="mailto:hello@edwarddev.com" class="text-blue-500">hello@edwarddev.com</a><br>
-        <a href="mailto:edward@digitalplat.org" class="text-blue-500">edward@digitalplat.org</a>
+        <table class="table-auto w-full text-left mt-4">
+          <thead>
+            <tr>
+              <th class="border-b-2 py-2">Contact Method</th>
+              <th class="border-b-2 py-2">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border-b py-2">Email</td>
+              <td class="border-b py-2">
+                <a href="mailto:hello@edwarddev.com" class="text-blue-500">hello@edwarddev.com</a><br>
+                <a href="mailto:edward@digitalplat.org" class="text-blue-500">edward@digitalplat.org</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="border-b py-2" colspan="2">
+                <iframe src="https://forms.gle/xWnNrQerhY2NK9TLA" allowfullscreen></iframe>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
-  </main>
+    
 
   <footer>
     <div class="footer-content">
@@ -391,7 +417,8 @@
         <nav>
           <a href="/policy/privacy.html" class="text-blue-500">Privacy Policy</a>&nbsp;
           <a href="/policy/cookie.html" class="text-blue-500">Cookie Policy</a>&nbsp;
-          <a href="https://github.com/EdwardLab/edwarddev.com/issues" class="text-blue-500">Feedback</a>
+          <a href="https://github.com/EdwardLab/edwarddev.com/issues" class="text-blue-500">Feedback</a>&nbsp;
+          <button type="button" class="text-blue-500" data-cc="show-preferencesModal">Cookie preferences</button>
         </nav>
       </div>
     </div>
