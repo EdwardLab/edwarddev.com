@@ -9,7 +9,7 @@
   <meta name="author" content="Edward Hsing">
   <link rel="icon" href="https://avatars.githubusercontent.com/u/39870096?v=4" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="/static/js/tailwind.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -238,7 +238,7 @@
     }
     /* Dark Mode */
     [data-theme='dark'] {
-      --primary-color: #64ffda;
+      --primary-color: #00BFFF;
       --primary-text: #ccd6f6;
       --primary-text-hover: #ffffff;
       --background-color: #0a192f;
@@ -247,7 +247,7 @@
       --text-color: #ccd6f6;
       --text-hover-color: #ffffff;
       --header-bg-color: rgba(10, 25, 47, 0.85);
-      --header-text-color: #64ffda;
+      --header-text-color: #00BFFF;
     }
     body {
       background-color: var(--background-color);
@@ -287,6 +287,68 @@
       height: 600px;
       border: none;
     }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background-color: var(--secondary-background-color);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.02);
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .more-projects {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .organization-info {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .organization-card {
+      background-color: var(--secondary-background-color);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .organization-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
   </style>
 </head>
 <body>
@@ -327,28 +389,48 @@
       </div>      
     </section>
     
-
     <section id="projects" class="section" data-aos="fade-up">
-      <div class="content-box">
-        <h2>Projects</h2>
-        <p><b>Projects created by me and actively maintained:</b></p>
-        <ul>
-          <li><b>FlyOS Project:</b> Deploy a full Ubuntu-based Linux container subsystem on your phone. It's a complete Linux system that fits in your pocket! Running Linux, Windows, and even DOS applications with a web dashboard on your phone.</li>
-          <li><b>US.KG:</b> Free domain name, more than 30,000 users from worldwide benefit from it!</li>
-          <li><b>BINPython:</b> Portable single binary Python. Runs anywhere</li>
-          <li><b>No longer actively maintained but still exciting projects: </b>boostsms, webpds, quickpage, teampage, Anika Video Downloader(Web Version), XLink, Termux-Api WEB Series, dogchat...</li>
-          <li><b>...</b> Find more projects on my GitHub</li>
-        </ul>
-        <p>Check out my latest projects on <a href="https://github.com/edwardlab" class="text-blue-500">GitHub</a>. I'm constantly working on new and exciting projects that aim to make a difference in the world.</p>
-        <b><span class="logo-text"><img src="https://cloud-y7bfnupya-hack-club-bot.vercel.app/0logo-banner-300x96.png" alt="DigitalPlat Logo" style="height: 2em;"></span></b>
-        <a href="https://digitalplat.org" class="text-blue-500">DigitalPlat.org</a>
-        <p>I created the organization DigitalPlat.org (A global non-profit organization that supports open source and community development and explores innovative projects) Our members come from all over the world, and we welcome you to join our family!</p>
-        <p>DigitalPlat is fiscally sponsored by The Hack Foundation, a 501(c)(3) nonprofit (EIN: 81-2908499).</p>
-        <p>Donate to DigitalPlat today (Tax-exempt in the U.S. Non-profit charitable organization): <a href="https://hcb.hackclub.com/donations/start/digitalplat" class="text-blue-500">Click Here!</a></p>
-        <p>Contact DigitalPlat: <a href="mailto:contact@digitalplat.org" class="text-blue-500">contact@digitalplat.org</a>, +1-855-980-5959 (Toll-free in US & Canada)</p>
-        <p>DigitalPlat GitHub: <a href="https://github.com/digitalplatdev" class="text-blue-500">https://github.com/digitalplatdev</a></p>
-        <b>EdgeAlpha Lab</b>
-        <p>EdgeAlpha is an upcoming and forward-looking research organization focused on artificial intelligence, edge computing, and operating system kernel research.</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3 class="project-title">FlyOS</h3>
+          <p>Deploy a full Ubuntu-based Linux container subsystem on your phone. It's a complete Linux system that fits in your pocket! Running Linux, Windows, and even DOS applications with a web dashboard on your phone.</p>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">US.KG</h3>
+          <p>Free domain name for everyone, more than 30,000 users from worldwide benefit from it! (Owned by DigitalPlat)</p>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">BINPython</h3>
+          <p>Portable single binary Python. Runs anywhere. In your pocket.</p>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Little project, yet it holds a lot of charm</h3>
+          <p>Check out here: <a href="https://github.com/EdwardLab?tab=repositories" class="text-blue-500">My GitHub repositories page</a></p>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Still exciting Projects</h3>
+          <p>No longer actively maintained but still exciting: boostsms, webpds, quickpage, teampage, Anika Video Downloader(Web Version), XLink, Termux-Api WEB Series, dogchat...</p>
+        </div>
+      
+      <p class="more-projects">
+        Check out my latest projects on <a href="https://github.com/edwardlab" class="text-blue-500">GitHub</a>. I'm constantly working on new and exciting projects that aim to make a difference in the world.
+      </p>
+    </div>
+      <div class="organization-info">
+        <div class="organization-card" style="text-align: left;">
+          <h3 class="organization-title">DigitalPlat</h3>
+          <img src="https://cloud-y7bfnupya-hack-club-bot.vercel.app/0logo-banner-300x96.png" alt="DigitalPlat Logo" style="height: 2em;">
+          <p>I'm the founder and president the organization DigitalPlat.org (A global non-profit organization that supports open source and community development and explores innovative projects) Our members come from all over the world, and we welcome you to join our family!</p>
+          <p>DigitalPlat is fiscally sponsored by The Hack Foundation, a 501(c)(3) nonprofit (EIN: 81-2908499).</p>
+          <p>Donate to DigitalPlat today (Tax-exempt in the U.S. Non-profit charitable organization): <a href="https://hcb.hackclub.com/donations/start/digitalplat" class="text-blue-500">Click Here!</a></p>
+          <p>Contact DigitalPlat: <a href="mailto:contact@digitalplat.org" class="text-blue-500">contact@digitalplat.org</a>, +1-855-980-5959 (Toll-free in US & Canada)</p>
+          <p>DigitalPlat GitHub: <a href="https://github.com/digitalplatdev" class="text-blue-500">https://github.com/digitalplatdev</a></p>
+        </div>
+        <div class="organization-card">
+          <h3 class="organization-title">EdgeAlpha Lab</h3>
+          <p>EdgeAlpha is an upcoming and forward-looking research organization focused on artificial intelligence, edge computing, and operating system kernel research.</p>
+        </div>
       </div>
     </section>
 
@@ -374,14 +456,13 @@
             </tr>
             <tr>
               <td class="border-b py-2" colspan="2">
-                <iframe src="https://forms.gle/xWnNrQerhY2NK9TLA" allowfullscreen></iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbD1ZSX2NkS4sU2i_2WaXrJw35IsnTpzUxHB0YFPDqE1osIg/viewform?embedded=true" allowfullscreen></iframe>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
-    
 
   <footer>
     <div class="footer-content">
@@ -415,10 +496,10 @@
         <p>Except where otherwise noted, Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.</p>
         <p>This page is open source. <a href="https://github.com/EdwardLab/edwarddev.com/blob/main/index.html" target="_blank" class="text-blue-500"> Improve this page ↗</a></p>
         <nav>
-          <a href="/policy/privacy.html" class="text-blue-500">Privacy Policy</a>&nbsp;
-          <a href="/policy/cookie.html" class="text-blue-500">Cookie Policy</a>&nbsp;
-          <a href="https://github.com/EdwardLab/edwarddev.com/issues" class="text-blue-500">Feedback</a>&nbsp;
-          <button type="button" class="text-blue-500" data-cc="show-preferencesModal">Cookie preferences</button>
+          <a href="/policy/privacy.html" class="text-blue-500">Privacy Policy</a>&nbsp;|
+          <a href="/policy/cookie.html" class="text-blue-500">Cookie Policy</a>&nbsp;|
+          <a href="https://github.com/EdwardLab/edwarddev.com/issues" class="text-blue-500">Feedback</a>&nbsp;|
+          <button type="button" class="text-blue-500" data-cc="show-preferencesModal">Cookie Preferences</button>
         </nav>
       </div>
     </div>
