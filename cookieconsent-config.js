@@ -34,7 +34,7 @@ CookieConsent.run({
                     title: "We value your privacy",
                     description: "We use cookies to improve your experience on our website and analyze traffic. By continuing to browse, you consent to our use of cookies.",
                     acceptAllBtn: "Accept all",
-                    acceptNecessaryBtn: "Accept Only Necessary",
+                    acceptNecessaryBtn: "Accept Strictly Necessary",
                     showPreferencesBtn: "Manage preferences",
                     footer: "<a href=\"/policy/privacy.html\">Privacy Policy</a>\n<a href=\"policy/cookie.html\">Cookie Policy</a>"
                 },
